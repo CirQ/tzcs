@@ -54,7 +54,7 @@ try:
         stuid = 2016050000 + i
         purl = url.format(stuid, 1)
         resp = s.get(purl, allow_redirects=False)
-        if(resp.status_code == 200):
+        if resp.status_code == 200 :
             bs = BeautifulSoup(s.get(purl).text, 'lxml')
             table = bs.find('table', cellspacing='1')
             rows = table.find_all('tr')
